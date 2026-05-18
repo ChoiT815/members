@@ -15,7 +15,7 @@ public class MemberService {
 
     private final MemberRepository memberRepository;
 
-    public MemberResponse save(MemberRequest request) {
+    public MemberResponse saveMember(MemberRequest request) {
         log.info("[API - LOG] POST /api/members 요청 - name: {}, age: {}, mbti: {}", request.getName(), request.getAge(), request.getMbti());
         Member member = new Member(request.getName(), request.getAge(), request.getMbti());
         memberRepository.save(member);
