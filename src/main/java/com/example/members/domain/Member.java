@@ -17,7 +17,9 @@ public class Member {
     private int age;
     private String mbti;
 
-    public void setId(Long id, String name, int age, String mbti) {
-        this.id = id;
+    public Member(String name, int age, String mbti) {
+        this.name = name;
+        this.age = age;
+        this.mbti = mbti;
     }
 }
