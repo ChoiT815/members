@@ -18,10 +18,10 @@
 ## 퍼블릭 IP
 ![img_2.png](img_2.png)
 
-## LEVEL 2 - DB 분리 및 보안 연결
+# LEVEL 2 - DB 분리 및 보안 연결
 
-### Actuator Info 엔드포인트
+## Actuator Info 엔드포인트
 http://43.203.240.227:8080/actuator/info
 
-### RDS 보안 그룹 설정
+## RDS 보안 그룹 설정
 ![img_3.png](img_3.png)
