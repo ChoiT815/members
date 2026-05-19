@@ -1,10 +1,28 @@
 spring:
+  config:
+    import: "aws-parameterstore:/members/db/"
   datasource:
-    url: jdbc:mysql://localhost:3306/members
+    url: ${db-url}
     driver-class-name: com.mysql.cj.jdbc.Driver
-    username: members
-    password: members1234
+    username: ${db-username}
+    password: ${db-password}
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: false
+
+spring.cloud.aws:
+  region:
+    static: ap-northeast-2
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info
+  info:
+    env:
+      enabled: true
+
+info:
+  team-name: ${team-name}
