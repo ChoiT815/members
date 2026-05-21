@@ -26,7 +26,7 @@ http://43.203.240.227:8080/actuator/info
 ## RDS 보안 그룹 설정
 ![img_3.png](img_3.png)
 
-# LV 3 - 프로필 사진 기능 추가와 권한 관리
+# LEVEL 3 - 프로필 사진 기능 추가와 권한 관리
 
 ## S3 버킷 설정
 - 버킷 이름: `members-profile-image`
