@@ -25,3 +25,18 @@ http://43.203.240.227:8080/actuator/info
 
 ## RDS 보안 그룹 설정
 ![img_3.png](img_3.png)
+
+# LV 3 - 프로필 사진 기능 추가와 권한 관리
+
+## S3 버킷 설정
+- 버킷 이름: `members-profile-image`
+- 퍼블릭 액세스 차단: 활성화
+- IAM Role을 통한 EC2 접근 권한 설정
+
+## API
+- `POST /api/members/{id}/profile-image` - 프로필 이미지 업로드
+- `GET /api/members/{id}/profile-image` - Presigned URL 반환 (유효기간 7일)
+
+## Presigned URL 접근 성공 스크린샷
+![img_4.png](img_4.png)
+
