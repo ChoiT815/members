@@ -10,12 +10,13 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: false
-
-spring.cloud.aws:
-  region:
-    static: ap-northeast-2
-  s3:
-    bucket: members-profile-images
+  cloud:
+    aws:
+      region:
+        static: ap-northeast-2
+      s3:
+        bucket: members-profile-image
+        endpoint: https://s3.ap-northeast-2.amazonaws.com
 
 management:
   endpoints:
