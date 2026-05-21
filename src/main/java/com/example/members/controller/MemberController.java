@@ -7,6 +7,9 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.IOException;
 
 @Slf4j
 @RestController
@@ -28,5 +31,21 @@ public class MemberController {
         log.info("[API - LOG] GET /api/members/{}", id);
         MemberResponse response = memberService.findById(id);
         return ResponseEntity.ok(response);
+    }
+
+    @PostMapping("/{id}/profile-image")
+    public ResponseEntity<MemberResponse> updateProfileImageUrl(
+            @PathVariable Long id,
+            @RequestParam("file") MultipartFile file) throws IOException {
+        log.info("[API - LOG] POST /api/members/{}/profile-image", id);
+        MemberResponse response = memberService.uploadProfileImage(id, file);
+        return ResponseEntity.ok(response);
+    }
+
+    @GetMapping("/{id}/profile-image")
+    public ResponseEntity<String> getProfileImageUrl(@PathVariable Long id) {
+        log.info("/api/members/{}/profile-image", id);
+        String presignedUrl = memberService.getPresignedUrl(id);
+        return ResponseEntity.ok(presignedUrl);
     }
 }

@@ -16,10 +16,15 @@ public class Member {
     private String name;
     private int age;
     private String mbti;
+    private String profileImageUrl;
 
     public Member(String name, int age, String mbti) {
         this.name = name;
         this.age = age;
         this.mbti = mbti;
+    }
+
+    public void updateProfileImageUrl(String profileImageUrl) {
+        this.profileImageUrl = profileImageUrl;
     }
 }
