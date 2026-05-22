@@ -40,3 +40,10 @@ http://43.203.240.227:8080/actuator/info
 ## Presigned URL 접근 성공 스크린샷
 ![img_4.png](img_4.png)
 
+# LV 4 - Docker & CI/CD 파이프라인 구축
+
+## GitHub Actions CI/CD 성공
+![img_5.png](img_5.png)
+
+## EC2 Docker 컨테이너 실행
+![img_6.png](img_6.png)
