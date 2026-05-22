@@ -1,0 +1,31 @@
+spring:
+  config:
+    import: "aws-parameterstore:/members/db/"
+  datasource:
+    url: ${db-url}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: ${db-username}
+    password: ${db-password}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+  cloud:
+    aws:
+      region:
+        static: ap-northeast-2
+      s3:
+        bucket: members-profile-image
+        endpoint: https://s3.ap-northeast-2.amazonaws.com
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info
+  info:
+    env:
+      enabled: true
+
+info:
+  team-name: ${team-name}
